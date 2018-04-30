@@ -10,7 +10,7 @@ Let' use this readme to track my progress of what I did on my machine. This can 
 
 ### Item number one - The basic app structure
 
-I used express-generator to create a basic app structure which I later modified slightly. Below you will find commands I used. Most of it is from [express-generator tutorial](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/skeleton_website). 
+I used express-generator to create a basic app structure which I later modified slightly. Below you will find commands I used. Most of it is from this [express-generator tutorial](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/skeleton_website). 
 ```
 npm install -g express-generator
 express --view=hbs --css=sass developers-brew
@@ -19,7 +19,7 @@ npm install -g gulp
 SET DEBUG=express-locallibrary-tutorial:* & npm start
 http://localhost:3000/
 ```
-I decided to use Sass preprocessor and Handlebars as template engine. Don't ask me why, they just happened to caugh my eye first and I just stuck with them.
+I decided to use Sass as the CSS preprocessor and Handlebars as the template engine. Don't ask me why, they just happened to caugh my eye first and I just stuck with them.
 
 ### Item number two - The task runner
 
