@@ -8,7 +8,10 @@ const gulp = require('gulp'),
 
 //This task joins many script files into one
 gulp.task('concatScripts', function () {
-  return gulp.src('src/js/*.js')
+  return gulp.src([
+    'src/js/script-a.js',
+    'src/js/script-b.js',
+    'src/js/script-c.js']) //Could use src/js/*.js but "gulp default" throws an error "cannot find app.min.js"
     .pipe(maps.init())
     .pipe(concat('app.js'))
     .pipe(maps.write('./'))
