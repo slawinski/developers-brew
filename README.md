@@ -3,7 +3,7 @@
 ## Introduction
 
 My first try at big boy's web development. The website in this repository will contain all the skills I acquired thoughout my short career as a developer. 
-It will grow gradually and I hope that every visitor will be impressed by the tasteful design and cutting-edge technology behind it.
+The app will grow gradually and I hope that every visitor will be impressed by the tasteful design and cutting-edge technology behind it.
 
 ## Some code snippets in case I will forget them
 
@@ -15,14 +15,11 @@ npm install -g express-generator
 express --view=hbs --css=sass developers-brew
 npm install
 npm install -g gulp
-```
-
-```
 SET DEBUG=express-locallibrary-tutorial:* & npm start
 http://localhost:3000/
 ```
 
-Here's a step-by-step guide on how to configure, add, commit, push and pull from github (hey, don't laugh. I'm new at this):
+Here's a cheat-sheet on how to configure, add, commit, push and pull from github (hey, don't laugh. I'm new at this):
 ```
 git config --global user.name "<Your Name>"
 git config --global user.email "<youremail@example.com>"
