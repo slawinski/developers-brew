@@ -10,6 +10,17 @@ var usersRouter = require('./routes/users');
 var app = express();
 
 // view engine setup
+
+//TEST Handlebars instance path coniguration
+var handlebars = require('express-handlebars').create({
+  layoutsDir: path.join(__dirname, "views/layouts"),
+  partialsDir: path.join(__dirname, "views/partials"),
+  defaultLayout: 'layout',
+  extname: 'hbs'
+});
+app.engine('hbs', handlebars.engine);
+//TEST
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
