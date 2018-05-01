@@ -5,7 +5,9 @@
         sass = require('gulp-sass'),
     cleanCSS = require('gulp-clean-css'),
         maps = require('gulp-sourcemaps'),
-         del = require('del');
+         del = require('del'),
+ browserSync = require('browser-sync'),
+     nodemon = require('gulp-nodemon');
 
 //This task joins many script files into one
 gulp.task('concatScripts', function () {
@@ -44,29 +46,43 @@ gulp.task('minifyStyles', ['compileSass'], function() {
     .pipe(gulp.dest('src/css'))
 });
 
-//This task watches for changes in the given filetypes
-gulp.task('watchFiles', function(){
-  gulp.watch('sass/**/*.scss',['compileSass']);
-  gulp.watch('js/*.js', ['concatScripts']);
-})
+// //This task watches for changes in the given filetypes
+// gulp.task('watchFiles', function(){
+//   gulp.watch('sass/**/*.scss',['compileSass']);
+//   gulp.watch('js/*.js', ['concatScripts']);
+// })
+
+//This task builds the dist files in the given order
+gulp.task('build', ['minifyStyles', 'minifyScripts'], function(){
+  return gulp.src(['src/css/style.min.css', 'src/js/app.min.js', 'src/img/**', 'src/fonts/**'], {base: './src'})
+  .pipe(gulp.dest('dist'));
+});
+
+gulp.task('nodemon', function() {
+  nodemon({
+    script: 'app.js',
+    ext: 'js'
+  })
+  .on('restart', function() {
+    console.log('>> node restart');
+  })
+});
+
+//I don't remember what this does lol
+gulp.task('browserSync', ['nodemon'], function(){
+  browserSync({
+    proxy: "localhost:3000",  // local node app address
+    port: 5000,  // use *different* port than above
+    notify: true
+  });
+});
 
 //This task deletes built files (usually before the next buid task)
 gulp.task('clean', function(){
   del(['dist', 'src/css', 'src/js/app*.js*']);
 });
 
-
-//This task builds the dist files in the given order
-gulp.task('build', ['minifyScripts', 'minifyStyles'], function(){
-  return gulp.src(['src/css/style.min.css', 'src/js/app.min.js', 'src/img/**', 'src/fonts/**'], {base: './src'})
-  .pipe(gulp.dest('dist'));
-});
-
-//I don't remember what this does lol
-gulp.task('serve', ['watchFiles']);
-
-
 //This default task shoudl be run with "gulp" command and all should happen automagically
-gulp.task('default', ['clean'], function(){
+gulp.task('default', ['clean', 'browserSync'], function(){
   gulp.start('build');
 });

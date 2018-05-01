@@ -32,7 +32,7 @@ By reading and watching quite a lot of tutorials on Gulp I managed to introduce 
 
 It was long overdue but I finally caught up with the version control using git. It's not so scary anymore but I still do not fully understand all those 'forks' and 'branches'.
 
-## Some commands just in case I will forget them
+###### Some commands just in case I will forget them
 
 Here's a cheat-sheet on how to configure, add, commit, push and pull from github (hey, don't laugh. I'm new at this):
 ```
@@ -46,4 +46,10 @@ git remote add <REMOTENAME> <URL>
 git pull <REMOTENAME> <BRANCH>
 git push <REMOTENAME> <BRANCH>
 ```
+### Item number four - The template engine
 
+It's beyond all reasoning why I wasn't able to grasp the idea of templating engine, layouts and partials. There's still a lot to learn but I finally made handlebars work for me. The [documentation](https://github.com/ericf/express-handlebars) was very helpful.
+
+### Item number five - The node.js
+
+Oh boy, what I had to put up with! I just couldn't make gulp, browserSync and node work togethe until I read this [Gist](https://gist.github.com/dstroot/22525ae6e26109d3fc9d).
