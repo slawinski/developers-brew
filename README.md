@@ -10,7 +10,7 @@ Let' use this readme to track my progress of what I did on my machine. This can 
 
 ### Item number one - The basic app structure
 
-I used express-generator to create a basic app structure which I later modified slightly. Below you will find commands I used. Most of it is from this [express-generator tutorial](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/skeleton_website). 
+I used express-generator to create a basic app structure which I later modified slightly. Below you will find the commands used. Most of it is from this [express-generator tutorial](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/skeleton_website). 
 ```
 npm install -g express-generator
 express --view=hbs --css=sass developers-brew
@@ -23,9 +23,11 @@ I decided to use Sass as the CSS preprocessor and Handlebars as the template eng
 
 ### Item number two - The task runner
 
-By reading and watching quite a lot of tutorials on Gulp I managed to introduce a couple of tasks like:
+By reading and watching quite a lot of Gulp tutorials I managed to introduce a couple of tasks like:
 - concatenating and minifying scripts and styles,
 - cleaning up static files and building new ones,
+- starting nodemon,
+- initializing browsersync,
 - watching over changes in the files.
 
 ### Item number three - The version control
@@ -52,4 +54,4 @@ It's beyond all reasoning why I wasn't able to grasp the idea of templating engi
 
 ### Item number five - The Gulp, the Node and the browserSync
 
-Oh boy, what I had to put up with! I just couldn't make gulp, browserSync and node work together with gulp until I read this [Gist](https://gist.github.com/dstroot/22525ae6e26109d3fc9d).
+Oh boy, what I had to put up with! I just couldn't make browserSync and node work together with gulp until I read this [Gist](https://gist.github.com/dstroot/22525ae6e26109d3fc9d). If only the website could reload on change without running gulp all over again (on my to-do list).
