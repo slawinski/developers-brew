@@ -50,6 +50,6 @@ git push <REMOTENAME> <BRANCH>
 
 It's beyond all reasoning why I wasn't able to grasp the idea of templating engine, layouts and partials. There's still a lot to learn but I finally made handlebars work for me. The [documentation](https://github.com/ericf/express-handlebars) was very helpful.
 
-### Item number five - The node.js
+### Item number five - The Gulp, the Node and the browserSync
 
-Oh boy, what I had to put up with! I just couldn't make gulp, browserSync and node work togethe until I read this [Gist](https://gist.github.com/dstroot/22525ae6e26109d3fc9d).
+Oh boy, what I had to put up with! I just couldn't make gulp, browserSync and node work together with gulp until I read this [Gist](https://gist.github.com/dstroot/22525ae6e26109d3fc9d).

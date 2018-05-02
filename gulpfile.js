@@ -6,7 +6,7 @@
     cleanCSS = require('gulp-clean-css'),
         maps = require('gulp-sourcemaps'),
          del = require('del'),
- browserSync = require('browser-sync'),
+ browserSync = require('browser-sync')/*.create()*/,
      nodemon = require('gulp-nodemon');
 
 //This task joins many script files into one
@@ -19,6 +19,7 @@ gulp.task('concatScripts', function () {
     .pipe(concat('app.js'))
     .pipe(maps.write('./'))
     .pipe(gulp.dest('src/js'))
+    .pipe(browserSync.stream());
 });
 
 //This task removes whitespaces, newlines etc. from JS scripts to decrease its size
@@ -27,6 +28,7 @@ gulp.task('minifyScripts', ['concatScripts'], function(){
   .pipe(uglify())
   .pipe(rename({suffix: '.min'}))
   .pipe(gulp.dest('src/js'))
+  .pipe(browserSync.stream());
 })
 
 //This task compiles Sass files into CSS
@@ -35,22 +37,19 @@ gulp.task('compileSass', function () {
     .pipe(maps.init())
     .pipe(sass())
     .pipe(maps.write('./'))
-    .pipe(gulp.dest('src/css'));
+    .pipe(gulp.dest('src/css'))
+    .pipe(browserSync.stream());
 });
 
 //This task removes whitespaces, newlines etc. from the CSS to decrease its size
 gulp.task('minifyStyles', ['compileSass'], function() {
-  return gulp.src(['src/css/*.css', '!./css/*.min.css'])
+  return gulp.src(['src/css/*.css', '!src/css/*.min.css'])
     .pipe(cleanCSS())
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('src/css'))
+    .pipe(browserSync.stream());
 });
 
-// //This task watches for changes in the given filetypes
-// gulp.task('watchFiles', function(){
-//   gulp.watch('sass/**/*.scss',['compileSass']);
-//   gulp.watch('js/*.js', ['concatScripts']);
-// })
 
 //This task builds the dist files in the given order
 gulp.task('build', ['minifyStyles', 'minifyScripts'], function(){
@@ -70,12 +69,19 @@ gulp.task('nodemon', function() {
 
 //I don't remember what this does lol
 gulp.task('browserSync', ['nodemon'], function(){
-  browserSync({
+  browserSync.init(["src/css/*.css", "src/js/*.js"], {
     proxy: "localhost:3000",  // local node app address
     port: 5000,  // use *different* port than above
-    notify: true
+    notify: true,
+    // tunnel: 'developers-brew' //url for people not in local ntwork
   });
 });
+
+//This task watches for changes in the given filetypes
+gulp.task('watch', ['browserSync'], function(){
+  gulp.watch('src/sass/*.scss',['minifyStyles'])/*.on('change', browserSync.reload)*/;
+  gulp.watch('src/js/*.js', ['minifyScripts'])/*.on('change', browserSync.reload)*/;
+})
 
 //This task deletes built files (usually before the next buid task)
 gulp.task('clean', function(){
@@ -83,6 +89,6 @@ gulp.task('clean', function(){
 });
 
 //This default task shoudl be run with "gulp" command and all should happen automagically
-gulp.task('default', ['clean', 'browserSync'], function(){
+gulp.task('default', ['clean', 'watch'], function(){
   gulp.start('build');
 });
