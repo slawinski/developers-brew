@@ -24,7 +24,7 @@ gulp.task('minifyScripts', ['concatScripts'], function(){
   return gulp.src('src/js/app.js')
   .pipe(uglify())
   .pipe(rename({suffix: '.min'}))
-  .pipe(gulp.dest('dist/js'))
+  .pipe(gulp.dest('src/js'))
   // .pipe(browserSync.stream());
 })
 
@@ -35,7 +35,7 @@ gulp.task('compileSass', function () {
     .pipe(sass())
     .pipe(maps.write('./'))
     .pipe(gulp.dest('src/css'))
-    .pipe(browserSync.stream(/*{match: '**.css'}*/))
+    // .pipe(browserSync.stream(/*{match: '**.css'}*/))
     ;
 });
 
@@ -45,14 +45,14 @@ gulp.task('minifyStyles', ['compileSass'], function() {
     .pipe(cleanCSS())
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('dist/css'))
-    .pipe(browserSync.stream(/*{match: '**.css'}*/))
+    // .pipe(browserSync.stream(/*{match: '**.css'}*/))
     ;
 });
 
 
 //This task builds the dist files in the given order
 gulp.task('build', ['minifyStyles', 'minifyScripts'], function(){
-  return gulp.src(['src/img/**', 'src/fonts/**'], {base: './src'})
+  return gulp.src([/*'src/css/*.min.css', 'src/js/*.min.js', */'src/img/**', 'src/fonts/**'], {base: './src'})
   .pipe(gulp.dest('dist'));
 });
 
@@ -78,8 +78,9 @@ gulp.task('browserSync', ['nodemon'], function(){
 
 //This task watches for changes in the given filetypes
 gulp.task('watch', ['browserSync'], function(){
-  gulp.watch('src/sass/*.scss',['minifyStyles'])/*.on('change', browserSync.reload)*/;
-  gulp.watch('src/js/*.js', ['minifyScripts'])/*.on('change', browserSync.reload)*/;
+  gulp.watch('src/sass/*.scss',['minifyStyles']);
+  gulp.watch('src/js/*.js', ['minifyScripts']);
+  gulp.watch('views/**/*.hbs').on('change', browserSync.reload);
 })
 
 //This task deletes built files (usually before the next buid task)
