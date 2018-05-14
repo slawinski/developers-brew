@@ -1,4 +1,4 @@
-const gulp = require('gulp'),
+  const gulp = require('gulp'),
       concat = require('gulp-concat'),
       uglify = require('gulp-uglify'),
       rename = require('gulp-rename'),
@@ -7,14 +7,18 @@ const gulp = require('gulp'),
         maps = require('gulp-sourcemaps'),
          del = require('del'),
  browserSync = require('browser-sync').create(),
-     nodemon = require('gulp-nodemon');
+     nodemon = require('gulp-nodemon'),
+       babel = require('gulp-babel');
 
 //This task joins many script files into one
 gulp.task('concatScripts', function () {
-  return gulp.src(['src/js/*.js'/*, '!src/js/*.min.js'*/])
+  return gulp.src(['src/js/*.js', '!src/js/app.js*'])
     .pipe(maps.init())
+    .pipe(babel({
+            presets: ['env']
+    }))
     .pipe(concat('app.js'))
-    .pipe(maps.write('./'))
+    .pipe(maps.write('./')) 
     .pipe(gulp.dest('src/js'))
     // .pipe(browserSync.stream())
     ;
@@ -28,7 +32,7 @@ gulp.task('minifyScripts', ['concatScripts'], function(){
   .pipe(gulp.dest('dist/js'))
   // .pipe(browserSync.stream())
   ;
-})
+});
 
 //This task compiles Sass files into CSS
 gulp.task('compileSass', function () {
@@ -87,7 +91,7 @@ gulp.task('watch', ['browserSync'], function(){
 
 //This task deletes built files (usually before the next buid task)
 gulp.task('clean', function(){
-  del(['dist', 'src/css', 'src/js/app*.js*']);
+  del(['dist', 'src/css', 'src/js/app.js*']);
 });
 
 //This default task shoudl be run with "gulp" command and all should happen automagically
