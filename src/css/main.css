@@ -1,0 +1,55 @@
+/* Main SCSS File */
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+
+.vertical-center {
+  min-height: 100%;
+  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh;
+  /* These two lines are counted as one :-)       */
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+header {
+  background-attachment: scroll; }
+
+.video-container video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  transform: translate(-50%, -50%); }
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+  background: black;
+  opacity: 0.3; }
+
+.title h1 {
+  text-align: center;
+  color: white;
+  font-family: 'Pacifico', cursive;
+  font-size: 6em;
+  z-index: 1; }
+
+.profile-pic {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+h3 {
+  text-align: center;
+  color: white; }
+
+/*# sourceMappingURL=main.css.map */

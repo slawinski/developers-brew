@@ -1,9 +1,46 @@
+header {
+  background-attachment: scroll; }
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
 
-a {
-  color: #00B7FF; }
+.video-container video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  transform: translate(-50%, -50%); }
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+  background: black;
+  opacity: 0.3; }
+
+.title h1 {
+  text-align: center;
+  color: white;
+  font-family: 'Pacifico', cursive;
+  font-size: 6em;
+  z-index: 1; }
+
+.vertical-center {
+  min-height: 100%;
+  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh;
+  /* These two lines are counted as one :-)       */
+  display: flex;
+  align-items: center;
+  justify-content: center; }
 
 .footer {
   position: fixed;
@@ -14,5 +51,8 @@ a {
   line-height: 60px;
   /* Vertically center the text there */
   background-color: #f5f5f5; }
+
+img.beer {
+  height: 200px; }
 
 /*# sourceMappingURL=style.css.map */
