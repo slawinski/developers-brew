@@ -1,4 +1,4 @@
-  const gulp = require('gulp'),
+const gulp = require('gulp'),
       concat = require('gulp-concat'),
       uglify = require('gulp-uglify'),
       rename = require('gulp-rename'),
@@ -9,6 +9,7 @@
  browserSync = require('browser-sync').create(),
      nodemon = require('gulp-nodemon'),
        babel = require('gulp-babel');
+
 
 //This task joins many script files into one
 gulp.task('concatScripts', function () {
@@ -29,6 +30,7 @@ gulp.task('minifyScripts', ['concatScripts'], function(){
   .pipe(rename({suffix: '.min'}))
   .pipe(gulp.dest('dist/js'));
 });
+
 
 //This task compiles Sass files into CSS
 gulp.task('compileSass', function () {
