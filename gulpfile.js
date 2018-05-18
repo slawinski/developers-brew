@@ -19,9 +19,7 @@ gulp.task('concatScripts', function () {
     }))
     .pipe(concat('app.js'))
     .pipe(maps.write('./')) 
-    .pipe(gulp.dest('src/js'))
-    // .pipe(browserSync.stream())
-    ;
+    .pipe(gulp.dest('src/js'));
 });
 
 //This task removes whitespaces, newlines etc. from JS scripts to decrease its size
@@ -29,9 +27,7 @@ gulp.task('minifyScripts', ['concatScripts'], function(){
   return gulp.src('src/js/app.js')
   .pipe(uglify())
   .pipe(rename({suffix: '.min'}))
-  .pipe(gulp.dest('dist/js'))
-  // .pipe(browserSync.stream())
-  ;
+  .pipe(gulp.dest('dist/js'));
 });
 
 //This task compiles Sass files into CSS
@@ -40,9 +36,7 @@ gulp.task('compileSass', function () {
     .pipe(maps.init())
     .pipe(sass())
     .pipe(maps.write('./'))
-    .pipe(gulp.dest('src/css'))
-    // .pipe(browserSync.stream(/*{match: '**.css'}*/))
-    ;
+    .pipe(gulp.dest('src/css'));
 });
 
 //This task removes whitespaces, newlines etc. from the CSS to decrease its size
@@ -50,14 +44,12 @@ gulp.task('minifyStyles', ['compileSass'], function() {
   return gulp.src(['src/css/*.css'/*, '!src/css/*.min.css'*/])
     .pipe(cleanCSS())
     .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest('dist/css'))
-    // .pipe(browserSync.stream(/*{match: '**.css'}*/))
-    ;
+    .pipe(gulp.dest('dist/css'));
 });
 
 //This task builds the dist files in the given order
 gulp.task('build', ['minifyStyles', 'minifyScripts'], function(){
-  return gulp.src(['src/img/**', 'src/fonts/**'], {base: './src'})
+  return gulp.src(['src/img/**', 'src/fonts/**', 'src/video/**'], {base: './src'})
   .pipe(gulp.dest('dist'));
 });
 
@@ -74,7 +66,7 @@ gulp.task('nodemon', function() {
 
 //I don't remember what this does lol
 gulp.task('browserSync', ['nodemon'], function(){
-  return browserSync.init(['src/sass/*.scss', "src/js/*.js"], {
+  return browserSync.init(['src/sass/*.scss', "src/js/*.js", '!src/js/app.js*'], {
     proxy: "localhost:3000",  // local node app address
     port: 5000,  // use *different* port than above
     notify: true,

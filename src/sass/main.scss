@@ -1,7 +1,13 @@
 /* Main SCSS File */
 
-// Base
-@import "variables";
+// Global CSS
+@import "global";
 
 // Components
-@import "scaffolding";
+@import "navbar";
+@import "welcome-page";
+@import "about-me";
+@import "my-skills";
+@import "my-projects";
+@import "contact-me";
+@import "footer";
