@@ -1,8 +1,13 @@
 /* Main SCSS File */
-html {
-  font: normal normal normal 1rem/1.5 Helvetica Neue, Helvetica, Arial, sans-serif; }
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
 
 .vertical-center {
+  min-height: 100%;
+  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh;
+  /* These two lines are counted as one :-)       */
   display: flex;
   align-items: center;
   justify-content: center; }
