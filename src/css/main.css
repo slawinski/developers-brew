@@ -27,9 +27,7 @@ $line-height: 1.5;*/
   top: 50%;
   left: 50%;
   min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
+  width: 90vw;
   z-index: -100;
   transform: translate(-50%, -50%); }
 
@@ -76,6 +74,9 @@ h3 {
 
 .thumbnail img {
   width: 200px; }
+
+img.beer {
+  height: 200px; }
 
 footer {
   width: 100%;
