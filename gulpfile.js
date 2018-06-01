@@ -8,7 +8,8 @@ const gulp = require('gulp'),
          del = require('del'),
  browserSync = require('browser-sync').create(),
      nodemon = require('gulp-nodemon'),
-       babel = require('gulp-babel');
+       babel = require('gulp-babel'),
+  handlebars = require('gulp-compile-handlebars');
 
 
 //This task joins many script files into one
@@ -91,4 +92,16 @@ gulp.task('clean', function(){
 //This default task shoudl be run with "gulp" command and all should happen automagically
 gulp.task('default', ['clean', 'watch'], function(){
   gulp.start('build');
+});
+
+gulp.task('html', () => {
+  return gulp.src('./views/layouts/*.hbs')
+    .pipe(handlebars({}, {
+      ignorePartials: true,
+      batch: ['./views/partials']
+    }))
+    .pipe(rename({
+      extname: '.html'
+    }))
+    .pipe(gulp.dest('./dist'));
 });
