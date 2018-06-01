@@ -10,7 +10,8 @@ section > div {
   background: darkgrey; }
 
 /* Tiny reset thingy */
-body, html {
+body,
+html {
   margin: 0;
   padding: 0; }
 
@@ -29,13 +30,7 @@ body, html {
   /* Needed for children to be absolutely positioned relative to the parent. */
   position: relative;
   /* The height of the container. Must be set, but it doesn't really matter what the value is. */
-  height: 100vh;
-  /* For text formatting. */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  text-shadow: 0 0 5px #000; }
+  height: 100vh; }
 
 .parallax::after {
   /* Display and position the pseudo-element */
@@ -124,8 +119,8 @@ h3 {
   border: 10px solid;
   border-color: #f1f1f1; }
 
-#my-skills .container-fluid {
-  padding: 0 5%; }
+#my-skills .row {
+  padding: 0 15%; }
 
 img.beer {
   height: 200px; }
