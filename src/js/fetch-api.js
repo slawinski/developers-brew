@@ -6,9 +6,15 @@
     .then(jsonData => {
       let output = '';
       jsonData.forEach(beer => {
-        output +=`<div><h3>${beer.name}</h3>
+        output +=`
+									<div>
+                  <img style="width: 75px" src="${beer.image_url}" alt="" />
+									<div style="display: inline-block">
+									<h3 style="">${beer.name}</h3>
                   <p>${beer.description}</p>
-                  <img class="beer" src="${beer.image_url}" alt="" /></div>`;
+									</div>
+									</div>
+									`;
       });
       document.getElementById('output').innerHTML = output;
     })         
