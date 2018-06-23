@@ -3,16 +3,15 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
+var exphbs = require('express-handlebars');
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 
 var app = express();
+
 
 // view engine setup
 
 //Handlebars instance path coniguration
-var exphbs = require('express-handlebars');
 
 var hbs = exphbs.create({
   layoutsDir: 'views/layouts',
@@ -30,7 +29,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'dist'))); //This is the path to dist folder where gulp puts static files
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

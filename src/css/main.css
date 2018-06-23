@@ -123,7 +123,8 @@ h3 {
   padding: 0 15%; }
 
 img.beer {
-  height: 200px; }
+  height: 100px;
+  transform: rotate(90deg); }
 
 footer {
   width: 100%;
