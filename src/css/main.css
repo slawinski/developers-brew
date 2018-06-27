@@ -1,8 +1,4 @@
 /* Main SCSS File */
-#testing123 {
-  font-weight: bold;
-  text-align: center; }
-
 section > div {
   height: 100vh;
   padding: 50px; }
