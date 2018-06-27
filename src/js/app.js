@@ -3,6 +3,7 @@
 document.getElementById('getData').addEventListener('click', getData);
 
 function getData() {
+
   fetch('https://api.punkapi.com/v2/beers/random').then(function (res) {
     return res.json();
   }).then(function (jsonData) {

@@ -1,6 +1,7 @@
   document.getElementById('getData').addEventListener('click', getData);
 
   function getData(){
+
   fetch('https://api.punkapi.com/v2/beers/random')
     .then(res => res.json())
     .then(jsonData => {
