@@ -1,63 +1,17 @@
 {{!-- my-skills --}}
-<section class="full-viewport-height" id="my-skills">
+<section id="my-skills">
   <div class="container-fluid bg-2">
     <h3 class="text-center">Our beers</h3>
     <p class="text-center"><em>Here are our finest beers</em></p>
     <div class="row text-center">
-      <div class="col-md-2 col-xs-4">
-          <img src="/img/html5-plain.svg" alt="HTML">
-        <div>
-          <p><strong>HTM Ale</strong></p>
+      {{#each showResults}}
+        <div class="col-md-2 col-xs-4">
+          <img src="{{img-address}}" alt="{{skill}}">
+          <div>
+            <p><strong>{{beer-pun}}</strong></p>
+          </div>
         </div>
-      </div>
-      <div class="col-md-2 col-xs-4">
-          <img src="/img/css3-plain.svg" alt="CSS">
-        <div>
-          <p><strong>Cascadian Style Stout</strong></p>
-        </div>
-      </div>
-      <div class="col-md-2 col-xs-4">
-          <img src="/img/javascript-plain.svg" alt="JavaScript">
-        <div>
-          <p><strong>Bohemian Javascripter</strong></p>
-        </div>
-      </div>
-      <div class=" col-md-2 col-xs-4">
-          <img src="/img/gulp-plain.svg" alt="Gulp.js">
-        <div>
-          <p><strong>Russian Imperial Gulp</strong></p>
-        </div>
-      </div>
-      <div class="col-md-2 col-xs-4">
-          <img src="/img/sass-original.svg" alt="Sass">
-        <div>
-          <p><strong>Sass Weizen</strong></p>
-        </div>
-      </div>
-      <div class="col-md-2 col-xs-4">
-          <img src="/img/nodejs-original-wordmark.svg" alt="Node.js">
-        <div>
-          <p><strong>Nodedzkie</strong></p>
-        </div>
-      </div>
-      <div class="col-md-2 col-xs-4">
-          <img src="/img/react-original.svg" alt="React">
-        <div>
-          <p><strong>Reactbier</strong></p>
-        </div>
-      </div>
-      <div class="col-md-2 col-xs-4">
-          <img src="/img/bootstrap-plain.svg" alt="Bootstrap">
-        <div >
-          <p><strong>Beerstrap</strong></p>
-        </div>
-      </div>
-      <div class="col-md-2 col-xs-4">
-          <img src="#" alt="Handlebars">
-        <div>
-          <p><strong>Handlebars Export</strong></p>
-        </div>
-      </div>
+      {{/each}}
     </div>
   </div>
 </section>
