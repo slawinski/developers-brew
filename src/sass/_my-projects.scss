@@ -1,4 +1,13 @@
-img.beer {
+.bd-beer-img {
 	height: 100px;
 	transform: rotate(90deg);
+}
+
+.cell-image {
+	text-align: center;
+	vertical-align: middle;
+}
+.jumbotron {
+	padding: 0 10%;
+	margin: 2% 10%;
 }
