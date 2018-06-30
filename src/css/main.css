@@ -4,7 +4,11 @@ $font-variant: normal;
 $font-weight: normal;
 $font-size: 1rem;
 $line-height: 1.5;*/
+<<<<<<< Updated upstream
 section > div {
+=======
+.full-viewport-height {
+>>>>>>> Stashed changes
   height: 100vh;
   padding: 50px; }
 
