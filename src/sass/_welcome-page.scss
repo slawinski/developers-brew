@@ -29,7 +29,7 @@ video {
 
 .title h1 {
 	text-align: center;
-	color: white;
+	color: $font-color-light;
 	font-family: $font-family-logo;
 	font-size: 5em;
 	z-index: 1;
@@ -39,7 +39,7 @@ video {
 .title h3 {
 	padding-top: 20px;
 	text-align: center;
-	color: white;
+	color: $font-color-light;
 	font-family: $font-family-tagline;
 	z-index: 1;
 	text-shadow: 2px 2px 4px #000000;

@@ -1,72 +1,29 @@
 /* Main SCSS File */
+/*$font-style: normal;
+$font-variant: normal;
+$font-weight: normal;
+$font-size: 1rem;
+$line-height: 1.5;*/
 section > div {
   height: 100vh;
   padding: 50px; }
 
 .bg-1 {
-  background: lightgrey; }
+  background-color: #9AACB8; }
 
 .bg-2 {
-  background: darkgrey; }
+  background-color: #B37C57; }
 
-/* Tiny reset thingy */
-body,
-html {
-  margin: 0;
-  padding: 0; }
-
-.wrapper {
-  /* The height needs to be set to a fixed value for the effect to work.
-   * 100vh is the full height of the viewport. */
-  height: 100vh;
-  /* The scaling of the images would add a horizontal scrollbar, so disable x overflow. */
-  overflow-x: hidden;
-  /* Enable scrolling on the page. */
-  overflow-y: auto;
-  /* Set the perspective to 2px. This is essentailly the simulated distance from the viewport to transformed objects.*/
-  perspective: 2px; }
-
-.section {
-  /* Needed for children to be absolutely positioned relative to the parent. */
-  position: relative;
-  /* The height of the container. Must be set, but it doesn't really matter what the value is. */
-  height: 100vh; }
-
-.parallax::after {
-  /* Display and position the pseudo-element */
-  content: " ";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  /* Move the pseudo-element back away from the camera,
-   * then scale it back up to fill the viewport.
-   * Because the pseudo-element is further away, it appears to move more slowly, like in real life. */
-  transform: translateZ(-1px) scale(1.5);
-  /* Force the background image to fill the whole element. */
-  background-size: 100%;
-  /* Keep the image from overlapping sibling elements. */
-  z-index: -1; }
-
-/* Sets the actual background images to adorable kitties. This part is crucial. */
-.img1::after {
-  background-image: url("/img/alcoholic-beverages-bar-beer-63633.jpg"); }
-
-.img2::after {
-  background-image: url("/img/beer-bottles.jpg"); }
-
-.img3::after {
-  background-image: url("/img/martin-knize-39793-unsplash.jpg"); }
-
-/*$font-style: normal;
-$font-variant: normal;
-$font-weight: normal;
-$font-color: #222;
-$font-size: 1rem;
-$line-height: 1.5;*/
 .navbar-brand {
   font-family: "Pacifico", cursive; }
+
+#mainNav {
+  border: 0;
+  background-color: #60412B; }
+  #mainNav a {
+    color: #DDE2E3; }
+  #mainNav li {
+    font-family: "Oswald", sans-serif; }
 
 video {
   position: absolute;
@@ -93,7 +50,7 @@ video {
 
 .title h1 {
   text-align: center;
-  color: white;
+  color: #DDE2E3;
   font-family: "Pacifico", cursive;
   font-size: 5em;
   z-index: 1;
@@ -102,7 +59,7 @@ video {
 .title h3 {
   padding-top: 20px;
   text-align: center;
-  color: white;
+  color: #DDE2E3;
   font-family: "Oswald", sans-serif;
   z-index: 1;
   text-shadow: 2px 2px 4px #000000; }
