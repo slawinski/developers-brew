@@ -52,7 +52,7 @@ gulp.task('minifyStyles', ['compileSass'], function() {
 
 //This task builds the dist files in the given order
 gulp.task('build', ['minifyStyles', 'minifyScripts'], function(){
-  return gulp.src(['src/img/**', 'src/fonts/**', 'src/video/**'], {base: './src'})
+  return gulp.src(['src/img/**', 'src/fonts/**', 'src/video/**', 'src/js/*.json'], {base: './src'})
   .pipe(gulp.dest('dist'));
 });
 
