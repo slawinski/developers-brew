@@ -35,7 +35,7 @@ gulp.task('minifyScripts', ['concatScripts'], function(){
 
 //This task compiles Sass files into CSS
 gulp.task('compileSass', function () {
-  return gulp.src('src/sass/*.scss')
+  return gulp.src('src/sass/main.scss')
     .pipe(maps.init())
     .pipe(sass())
     .pipe(maps.write('./'))

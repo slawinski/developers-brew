@@ -4,19 +4,21 @@
   padding: 50px; }
 
 .bg-1 {
-  background: lightgrey; }
+  background-color: #9AACB8; }
 
 .bg-2 {
-  background: darkgrey; }
+  background-color: #B37C57; }
 
-/*$font-style: normal;
-$font-variant: normal;
-$font-weight: normal;
-$font-color: #222;
-$font-size: 1rem;
-$line-height: 1.5;*/
 .navbar-brand {
   font-family: "Pacifico", cursive; }
+
+#mainNav {
+  border: 0;
+  background-color: #60412B; }
+  #mainNav a {
+    color: #DDE2E3; }
+  #mainNav li {
+    font-family: "Oswald", sans-serif; }
 
 video {
   position: absolute;
@@ -43,7 +45,7 @@ video {
 
 .title h1 {
   text-align: center;
-  color: white;
+  color: #DDE2E3;
   font-family: "Pacifico", cursive;
   font-size: 5em;
   z-index: 1;
@@ -52,7 +54,7 @@ video {
 .title h3 {
   padding-top: 20px;
   text-align: center;
-  color: white;
+  color: #DDE2E3;
   font-family: "Oswald", sans-serif;
   z-index: 1;
   text-shadow: 2px 2px 4px #000000; }

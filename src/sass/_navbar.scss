@@ -1,3 +1,14 @@
 .navbar-brand {
-	font-family: $font-family-logo;
+  font-family: $font-family-logo;
+}
+
+#mainNav {
+  border: 0;
+  background-color: $nav-color-dark;
+  a {
+    color: $font-color-light;
+  }
+  li {
+    font-family: $font-family-tagline;
+  }
 }
