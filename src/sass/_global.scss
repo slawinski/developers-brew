@@ -1,3 +1,31 @@
+section {
+  padding: 8em 0;
+}
+
+body {
+  font-family: $font-family-body !important;
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: $font-family-tagline !important;
+}
+
+.section-heading {
+  font-weight: 700;
+  font-size: 40px;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.section-subheading {
+  font-size: 16px;
+  font-weight: 400;
+  font-style: italic;
+  margin-bottom: 75px;
+  text-transform: none;
+  font-family: $font-family-body;
+}
+
 .full-viewport-height {
   height: 100vh;
   padding: 50px;
