@@ -9,11 +9,33 @@
   margin-bottom: 0px;
   font-size: 1.5em;
 }
-  .team-member p {
-    margin-top: 0;
-    line-height: 1.75;
-  }
 
+.team-member p {
+  margin-top: 0;
+  line-height: 1.75;
+}
+
+ul.social-buttons li a {
+  font-size: 20px;
+  line-height: 40px;
+  display: block;
+  width: 40px;
+  height: 40px;
+  transition: all .3s;
+  color: #fff;
+  border-radius: 100%;
+  outline: 0;
+  background-color: $nav-color-dark;
+}
+
+.list-inline {
+  padding-left: 0;
+  list-style: none;
+}
+
+.list-inline-item {
+  display: inline-block;
+}
 .person {
   border: 10px solid;
   border-color: #f1f1f1;
