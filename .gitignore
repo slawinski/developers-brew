@@ -2,3 +2,4 @@ node_modules
 dist
 src/css
 src/js/app.js*
+.idea

@@ -1,0 +1,43 @@
+[
+  {
+    "skill": "HTML",
+    "beer-pun": "HTM Ale",
+    "img-address": "/img/html5-plain.svg"
+  },
+  {
+    "skill": "CSS",
+    "beer-pun": "Cascadian Style Stout",
+    "img-address": "/img/css3-plain.svg"
+  },
+  {
+    "skill": "JS",
+    "beer-pun": "Bohemian Javascripter",
+    "img-address": "/img/javascript-plain.svg"
+  },
+  {
+    "skill": "Gulp.js",
+    "beer-pun": "Russian Imperial Gulp",
+    "img-address": "/img/gulp-plain.svg"
+  },
+  {
+    "skill": "Sass",
+    "beer-pun": "Sass Weizen",
+    "img-address": "/img/sass-original.svg"
+  },
+  {
+    "skill": "Node.js",
+    "beer-pun": "Nodedzkie",
+    "img-address": "/img/nodejs-original-wordmark.svg"
+  },
+  {
+    "skill": "React.js",
+    "beer-pun": "Beerstrap",
+    "img-address": "/img/bootstrap-plain.svg"
+  },
+  {
+    "skill": "Handlebars",
+    "beer-pun": "Handlebars Export",
+    "img-address": "#"
+  }
+]
+

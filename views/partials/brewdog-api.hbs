@@ -1,0 +1,26 @@
+<section id="search">
+  <div class="jumbotron">
+    <h3 id="testing123">Search for Beer</h3>
+    <p>consider skewed divs in background</p>
+    <form id="search-form" method="get" action="/brewdog">
+      <div class="row">
+        <div class="col-sm-4 form-group">
+          <label for="ids">ID:</label>
+          <input type="text" class="form-control" name="ids" placeholder="Enter beer id" id="ids">
+        </div>
+        <div class="col-sm-4 form-group">
+          <label for="name">Name:</label>
+          <select class="form-control" name="name" id="name">
+            <option hidden></option>
+          </select>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary btn-default">
+        <span class="glyphicon glyphicon-search"></span> Search
+      </button>
+    </form>
+  </div>
+  <div class="table-responsive jumbotron">
+    {{{body}}}
+  </div>
+</section>

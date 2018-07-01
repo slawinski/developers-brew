@@ -1,0 +1,21 @@
+{{#if showResults}}
+
+    <table class="table table-bordered table-hover">
+      <thead>
+      <th>Name</th>
+      <th>Tagline</th>
+      <th>Image</th>
+      </thead>
+      <tbody>
+      {{#each showResults}}
+        <tr>
+          <td>{{name}}</td>
+          <td>{{tagline}}</td>
+          <td class="cell-image"><img src="{{image_url}}" class="bd-beer-img" alt=""></td>
+        </tr>
+      {{/each}}
+      </tbody>
+    </table>
+{{else}}
+  <div class="alert alert-danger">There should be a table here</div>
+{{/if}}
