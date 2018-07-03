@@ -30,14 +30,14 @@
     "img-address": "/img/nodejs-original-wordmark.svg"
   },
   {
-    "skill": "React.js",
+    "skill": "Bootstrap",
     "beer-pun": "Beerstrap",
     "img-address": "/img/bootstrap-plain.svg"
   },
   {
-    "skill": "Handlebars",
-    "beer-pun": "Handlebars Export",
-    "img-address": "#"
+    "skill": "React.js",
+    "beer-pun": "Reactbier",
+    "img-address": "/img/react-original.svg"
   }
 ]
 
