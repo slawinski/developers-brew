@@ -2,15 +2,13 @@ const express = require('express');
 const router = express.Router();
 const fetch = require('node-fetch');
 
-// router.get('/', function (req, res) {
-//   fetch('skills.json')
-//       .then(function (res) {
-//         return res.json();
-//       })
-//       .then(function (data) {
-//         console.log(data);
-//       });
-// });
+const data = require('./skills.json');
+
+router.get('/', function (req, res) {
+  res.render('skillList', {
+    data: data,
+  });
+});
 
 router.get('/brewdog', function (req, res) {
   let url = ('https://api.punkapi.com/v2/beers?ids=' + req.query.ids);
@@ -22,7 +20,7 @@ router.get('/brewdog', function (req, res) {
       .then(function (results) {
         res.render('brewDogData', {
           showResults: results,
-          layout: 'brewdog-layout.hbs'
+          layout: 'brewdog-layout.hbs',
         });
       });
 });

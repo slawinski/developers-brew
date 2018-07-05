@@ -1,6 +1,16 @@
 #my-skills .row {
-	padding: 0 15%;
-	.thumbnail {
-//		 height: 33vh;
-	}
+  padding: 0 10%;
+}
+
+.grid {
+  display:grid;
+  grid-template-columns: repeat(4, minmax(max-content, 150px));
+  margin: 0 auto;
+  justify-content: center;
+  grid-gap: 10px;
+}
+
+.skill-img {
+  align-items: center;
+  justify-content: center;
 }
